@@ -8,7 +8,9 @@ export default function Home() {
   return (
     <>
       {!isMounted && <PreventRefresh />}
-      {isMounted && <h1>hello</h1>}
+      {isMounted && <h1>
+        <button>click</button>
+      </h1>}
       <button onClick={() => {
         setIsMounted((prev) => !prev);
       }} >click{JSON.stringify(isMounted)}</button>
