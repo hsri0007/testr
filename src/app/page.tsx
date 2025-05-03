@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 
 
 export default function Home() {
-  const [isMounted, setIsMounted] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
   return (
     <>
-      {isMounted && <PreventRefresh />}
+      {!isMounted && <PreventRefresh />}
+      {isMounted && <h1>hello</h1>}
       <button onClick={() => {
         setIsMounted((prev) => !prev);
       }} >click{JSON.stringify(isMounted)}</button>
